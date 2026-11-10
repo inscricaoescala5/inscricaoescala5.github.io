@@ -1,0 +1,586 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Inscrição para a aula do Escala 5.0 com o Ventura Advogados. O link de acesso é enviado por e-mail.">
+<meta property="og:title" content="Inscrição · Aula Escala 5.0">
+<meta property="og:description" content="Garanta a sua vaga na aula. O link de acesso é enviado para o seu e-mail.">
+<meta property="og:type" content="website">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#010818">
+<link rel="icon" type="image/png" href="assets/favicon-escala.png">
+<link rel="apple-touch-icon" href="assets/favicon-escala.png">
+<title>Inscrição · Aula Escala 5.0</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap">
+<style>
+/* Visual do evento Escala 5.0: azul-noite profundo com a onda dourada (mesma base do Radar da Reforma). */
+:root {
+  --navy-0: #010818;
+  --navy-1: #031130;
+  --navy-2: #071D47;
+  --panel: rgba(7, 26, 66, 0.72);
+  --panel-solid: #08193F;
+  --line: rgba(160, 190, 255, 0.16);
+  --gold: #F5B942;
+  --gold-light: #FFD98A;
+  --gold-deep: #D8921C;
+  --gold-wash: rgba(245, 185, 66, 0.12);
+  --white: #FFFFFF;
+  --text: #AFC0E0;
+  --mid: #7486AD;
+  --error: #FF8A7A;
+  --display: 'Space Grotesk', 'Segoe UI', system-ui, sans-serif;
+  --body: 'Inter', 'Segoe UI', system-ui, sans-serif;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+img { max-width: 100%; }
+body {
+  margin: 0; background: var(--navy-0); color: var(--white);
+  font-family: var(--body); font-size: 16px; line-height: 1.55; -webkit-font-smoothing: antialiased;
+}
+.sky {
+  position: fixed; inset: 0; z-index: 0; pointer-events: none;
+  background:
+    radial-gradient(ellipse 80% 55% at 50% 0%, #0A2A66 0%, transparent 70%),
+    linear-gradient(180deg, var(--navy-1) 0%, var(--navy-0) 100%);
+}
+.wave { position: absolute; left: 0; right: 0; bottom: 4vh; width: 100%; height: 46vh; min-height: 260px; opacity: .8; }
+.page { position: relative; z-index: 1; min-height: 100vh; display: flex; flex-direction: column; }
+.page main { flex: 1; }
+.wrap {
+  max-width: 860px; margin: 0 auto; width: 100%;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+button, input, textarea { font: inherit; color: inherit; }
+:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+
+/* Header */
+.top { border-bottom: 1px solid var(--line); background: rgba(1, 8, 24, 0.55); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); }
+.top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-block: 14px; }
+.brand img { height: 30px; width: auto; display: block; }
+.top-tag { font-family: var(--display); font-size: 11px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text); text-align: right; }
+.top-tag b { color: var(--gold); font-weight: 700; }
+
+/* Tipografia */
+.eyebrow {
+  display: inline-flex; align-items: center; gap: 12px;
+  font-family: var(--display); font-size: 12px; font-weight: 600; letter-spacing: 0.2em;
+  text-transform: uppercase; color: var(--gold);
+}
+.eyebrow::before { content: ""; width: 28px; height: 1px; background: linear-gradient(90deg, transparent, var(--gold)); }
+h1, h2, h3 { font-family: var(--display); margin: 0; text-wrap: balance; letter-spacing: -0.03em; }
+h1 { font-size: clamp(32px, 6.4vw, 54px); line-height: 1.04; font-weight: 700; }
+h2 { font-size: clamp(24px, 4.4vw, 34px); line-height: 1.1; font-weight: 700; }
+h3 { font-size: 20px; line-height: 1.25; font-weight: 700; letter-spacing: -0.02em; }
+.accent {
+  color: var(--gold);
+  background: linear-gradient(90deg, var(--gold-deep), var(--gold-light) 55%, var(--gold));
+  -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+}
+.lead { color: var(--text); font-size: 18px; max-width: 60ch; margin: 0; }
+.lead strong { color: var(--white); font-weight: 500; }
+
+/* Hero */
+.hero { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 32px; align-items: center; padding-block: 44px 28px; }
+.hero-copy { display: grid; gap: 20px; }
+.hero-logo-wrap {
+  border-radius: 18px; overflow: hidden; border: 1px solid rgba(245, 185, 66, 0.35);
+  box-shadow: 0 0 60px rgba(245, 185, 66, 0.14), 0 24px 60px rgba(0, 0, 0, 0.45);
+}
+.hero-logo { width: 100%; height: auto; display: block; aspect-ratio: 1; }
+.facts { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: var(--display); font-size: 12px; font-weight: 500; letter-spacing: 0.04em; border-radius: 999px;
+  border: 1px solid var(--line); padding: 7px 13px; color: var(--text); background: rgba(1, 8, 24, 0.5);
+}
+.chip::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--gold); box-shadow: 0 0 8px var(--gold); }
+
+/* Quem conduz */
+.host { display: grid; grid-template-columns: 76px minmax(0, 1fr); gap: 16px; align-items: center; padding: 16px 18px; max-width: 620px; }
+.host img { width: 76px; height: 76px; border-radius: 50%; object-fit: cover; border: 1px solid rgba(245, 185, 66, 0.55); }
+.host p { margin: 0; color: var(--text); font-size: 14px; line-height: 1.5; }
+.host strong { display: block; color: var(--white); font-family: var(--display); font-size: 16px; font-weight: 600; letter-spacing: -0.01em; }
+
+/* Painéis */
+.panel {
+  background: var(--panel); border: 1px solid var(--line); border-radius: 14px;
+  backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); position: relative; overflow: hidden;
+}
+.panel::before {
+  content: ""; position: absolute; inset: 0 0 auto; height: 2px;
+  background: linear-gradient(90deg, transparent, var(--gold) 30%, var(--gold-light) 60%, transparent);
+}
+
+/* Formulário */
+.form { display: grid; gap: 18px; padding-block: 12px 64px; }
+.block { padding: 24px 22px; display: grid; gap: 20px; }
+.block-head { display: grid; gap: 4px; }
+.block-num { font-family: var(--display); font-size: 11px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); }
+.block-head p { margin: 0; color: var(--mid); font-size: 14px; }
+.fields { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+.field { display: grid; gap: 6px; min-width: 0; align-content: start; }
+.field.wide { grid-column: 1 / -1; }
+.label, .field label {
+  font-family: var(--display); font-size: 11px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--text);
+}
+.label .opt-tag, .field label .opt-tag { color: var(--mid); letter-spacing: 0.08em; text-transform: none; font-weight: 500; }
+.field input, .field textarea {
+  width: 100%; background: rgba(1, 8, 24, 0.7); color: var(--white); border: 1px solid var(--line);
+  padding: 13px 14px; font: 16px/1.35 var(--body); border-radius: 8px;
+}
+.field textarea { min-height: 96px; resize: vertical; }
+.field input::placeholder, .field textarea::placeholder { color: var(--mid); }
+.field input:focus, .field textarea:focus { outline: none; border-color: var(--gold); }
+.field [aria-invalid="true"] { border-color: var(--error); }
+.hint { color: var(--mid); font-size: 12px; }
+
+.q { display: grid; gap: 10px; border: 0; margin: 0; padding: 0; min-width: 0; }
+.q legend { padding: 0; margin-bottom: 10px; font-family: var(--display); font-size: 17px; font-weight: 600; letter-spacing: -0.01em; color: var(--white); line-height: 1.3; }
+.q legend .opt-tag { color: var(--mid); font-size: 13px; font-weight: 500; }
+.q.invalid legend { color: var(--error); }
+.choices { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+.choice { position: relative; display: block; cursor: pointer; }
+.choice input { position: absolute; opacity: 0; inset: 0; margin: 0; cursor: pointer; }
+.choice span {
+  display: grid; grid-template-columns: 18px minmax(0, 1fr); gap: 12px; align-items: center; height: 100%;
+  padding: 13px 14px; border-radius: 10px; border: 1px solid var(--line); background: rgba(1, 8, 24, 0.45);
+  font-size: 15px; color: var(--white); line-height: 1.35; transition: border-color .15s, background .15s;
+}
+.choice span::before {
+  content: ""; width: 18px; height: 18px; border-radius: 50%; border: 1.5px solid var(--mid); box-sizing: border-box;
+  transition: border-color .15s, box-shadow .15s;
+}
+.choice:hover span { border-color: rgba(245, 185, 66, 0.5); }
+.choice input:checked + span { border-color: var(--gold); background: var(--gold-wash); }
+.choice input:checked + span::before { border: 5px solid var(--gold); box-shadow: 0 0 8px rgba(245, 185, 66, 0.6); }
+.choice input:focus-visible + span { outline: 2px solid var(--gold); outline-offset: 2px; }
+.choice small { display: block; color: var(--mid); font-size: 12.5px; margin-top: 2px; }
+.sub { padding: 16px; border-left: 2px solid var(--gold); background: rgba(245, 185, 66, 0.06); border-radius: 0 10px 10px 0; }
+
+.consent { display: grid; grid-template-columns: 20px minmax(0, 1fr); gap: 10px; align-items: start; font-size: 13px; color: var(--text); line-height: 1.5; cursor: pointer; }
+.consent input { width: 18px; height: 18px; margin: 1px 0 0; accent-color: var(--gold); }
+.form-error { color: var(--error); font-size: 14px; margin: 0; }
+.err-detail { display: block; margin-top: 4px; font-size: 12px; opacity: .75; }
+.hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+.submit-row { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; }
+.meta { color: var(--mid); font-size: 13px; font-family: var(--display); letter-spacing: 0.04em; }
+
+/* Botões */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+  padding: 16px 28px; border: 0; border-radius: 999px; cursor: pointer; text-decoration: none; text-align: center;
+  font-family: var(--display); font-weight: 600; font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase;
+  transition: box-shadow .2s, background .2s;
+}
+.btn-primary { background: linear-gradient(90deg, var(--gold-deep), var(--gold) 50%, var(--gold-light)); color: var(--navy-0); }
+.btn-primary:hover { box-shadow: 0 0 28px rgba(245, 185, 66, 0.45); }
+.btn-primary::after { content: "→"; font-weight: 400; }
+.btn-primary:disabled { background: var(--panel-solid); color: var(--mid); cursor: progress; box-shadow: none; }
+.btn-primary:disabled::after { content: ""; }
+.btn-ghost { background: transparent; color: var(--white); border: 1px solid var(--line); }
+.btn-ghost:hover { border-color: var(--gold); }
+
+/* Confirmação */
+.done { padding-block: 56px 72px; display: grid; gap: 24px; justify-items: start; }
+.done-card { padding: 30px 26px; display: grid; gap: 16px; max-width: 640px; border-color: rgba(245, 185, 66, 0.55); background: linear-gradient(160deg, rgba(245, 185, 66, 0.14), rgba(7, 26, 66, 0.82) 60%); }
+.check {
+  width: 56px; height: 56px; border-radius: 50%; display: grid; place-items: center;
+  background: linear-gradient(135deg, var(--gold-deep), var(--gold-light)); color: var(--navy-0);
+  font-size: 28px; font-weight: 700; box-shadow: 0 0 30px rgba(245, 185, 66, 0.45);
+}
+.mail-box {
+  padding: 14px 16px; border-radius: 10px; border: 1px solid rgba(245, 185, 66, 0.5); background: rgba(1, 8, 24, 0.55);
+  font-family: var(--display); font-size: 17px; font-weight: 600; color: var(--gold-light); word-break: break-all;
+}
+.done ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 8px; color: var(--text); font-size: 15px; }
+.done li { display: grid; grid-template-columns: 18px minmax(0, 1fr); gap: 8px; }
+.done li::before { content: "✓"; color: var(--gold); font-weight: 700; }
+
+.foot { border-top: 1px solid var(--line); background: rgba(1, 8, 24, 0.6); }
+.foot .wrap { padding-block: 22px 28px; color: var(--mid); font-size: 12px; display: grid; gap: 6px; }
+.foot a { color: var(--text); }
+
+.fade { animation: in .35s ease both; }
+@keyframes in { from { opacity: .001; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+
+@media (max-width: 720px) {
+  .hero { grid-template-columns: minmax(0, 1fr); gap: 8px; padding-block: 20px 20px; }
+  .hero { padding-top: 24px; }
+  .hero-logo-wrap { order: -1; width: 100%; max-width: 200px; margin: 0 0 16px; }
+  .fields, .choices { grid-template-columns: minmax(0, 1fr); }
+  .block { padding: 20px 16px; }
+  .lead { font-size: 16.5px; }
+  .top-tag { font-size: 10px; letter-spacing: 0.12em; max-width: 160px; line-height: 1.4; }
+  .brand img { height: 26px; }
+  .btn { width: 100%; }
+  .wave { height: 34vh; opacity: .55; }
+}
+@media (prefers-reduced-motion: reduce) { .fade { animation: none; } }
+</style>
+</head>
+<body>
+
+<div class="sky" aria-hidden="true"><svg class="wave" id="wave" viewBox="0 0 1600 500" preserveAspectRatio="none"></svg></div>
+
+<div class="page">
+  <header class="top">
+    <div class="wrap">
+      <a class="brand" href="https://venturalaw.com.br/" target="_blank" rel="noopener"><img src="assets/logo-ventura.png" alt="Ventura Advogados"></a>
+      <div class="top-tag"><b>Escala 5.0</b> · Inscrição para a aula</div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <!-- Formulário -->
+    <div id="view-form">
+      <section class="hero">
+        <div class="hero-copy">
+          <div class="eyebrow">Aula Escala 5.0</div>
+          <h1>Garanta a sua vaga na <span class="accent">aula</span>.</h1>
+          <p class="lead">A Reforma Tributária abriu um novo mercado para a advocacia. Faça a sua inscrição e <strong>receba o link de acesso à aula no seu e-mail</strong>.</p>
+          <div class="facts">
+            <span class="chip">Exclusiva para o Escala 5.0</span>
+            <span class="chip">Link enviado por e-mail</span>
+            <span class="chip">Inscrição em 2 minutos</span>
+          </div>
+        </div>
+        <div class="hero-logo-wrap"><img class="hero-logo" src="assets/escala-cartaz.jpg" alt="Escala 5.0" width="720" height="720"></div>
+      </section>
+
+      <div class="host panel" style="margin-bottom:22px">
+        <img src="assets/leonardo.jpg" alt="Leonardo Ventura" width="76" height="76">
+        <p><strong>Leonardo Ventura</strong>Sócio-fundador do Ventura Advogados e da mentoria TaxNowBR, com 30 anos de experiência nas áreas tributária e empresarial.</p>
+      </div>
+
+      <form class="form" id="form" novalidate>
+        <!-- 1. Dados -->
+        <section class="block panel">
+          <div class="block-head">
+            <span class="block-num">01 · Seus dados</span>
+            <p>O link da aula será enviado para o e-mail informado aqui.</p>
+          </div>
+          <div class="fields">
+            <div class="field wide">
+              <label for="nome">Nome completo</label>
+              <input id="nome" type="text" autocomplete="name" placeholder="Seu nome completo" required>
+            </div>
+            <div class="field">
+              <label for="email">E-mail</label>
+              <input id="email" type="email" autocomplete="email" inputmode="email" placeholder="voce@escritorio.com.br" required>
+            </div>
+            <div class="field">
+              <label for="email2">Confirme o e-mail</label>
+              <input id="email2" type="email" autocomplete="off" inputmode="email" placeholder="Repita o e-mail" required>
+            </div>
+            <div class="field">
+              <label for="whatsapp">Celular (WhatsApp)</label>
+              <input id="whatsapp" type="tel" autocomplete="tel-national" inputmode="tel" placeholder="(11) 91234-5678" maxlength="16" required>
+            </div>
+            <div class="field">
+              <label for="cidade">Cidade / UF <span class="opt-tag">(opcional)</span></label>
+              <input id="cidade" type="text" autocomplete="address-level2" placeholder="Ex.: São Paulo / SP">
+            </div>
+          </div>
+        </section>
+
+        <!-- 2. Experiência -->
+        <section class="block panel">
+          <div class="block-head">
+            <span class="block-num">02 · Sua experiência</span>
+            <p>Assim preparamos a aula para o perfil da turma.</p>
+          </div>
+
+          <fieldset class="q" data-q="tempo">
+            <legend>Há quanto tempo você atua na advocacia?</legend>
+            <div class="choices">
+              <label class="choice"><input type="radio" name="tempo" value="Ainda sou estudante ou recém-formado(a)"><span>Ainda sou estudante ou recém-formado(a)</span></label>
+              <label class="choice"><input type="radio" name="tempo" value="Até 3 anos"><span>Até 3 anos</span></label>
+              <label class="choice"><input type="radio" name="tempo" value="De 4 a 10 anos"><span>De 4 a 10 anos</span></label>
+              <label class="choice"><input type="radio" name="tempo" value="Mais de 10 anos"><span>Mais de 10 anos</span></label>
+            </div>
+          </fieldset>
+
+          <fieldset class="q" data-q="area">
+            <legend>Qual é a sua principal área de atuação hoje?</legend>
+            <div class="choices">
+              <label class="choice"><input type="radio" name="area" value="Tributário"><span>Tributário</span></label>
+              <label class="choice"><input type="radio" name="area" value="Empresarial, societário ou contratos"><span>Empresarial, societário ou contratos</span></label>
+              <label class="choice"><input type="radio" name="area" value="Cível, família ou sucessões"><span>Cível, família ou sucessões</span></label>
+              <label class="choice"><input type="radio" name="area" value="Trabalhista ou previdenciário"><span>Trabalhista ou previdenciário</span></label>
+              <label class="choice"><input type="radio" name="area" value="Outra área"><span>Outra área</span></label>
+            </div>
+          </fieldset>
+
+          <fieldset class="q" data-q="exp">
+            <legend>Qual é a sua experiência prática com Direito Tributário?</legend>
+            <div class="choices">
+              <label class="choice"><input type="radio" name="exp" value="Atuo com tributário no dia a dia"><span>Atuo com tributário no dia a dia</span></label>
+              <label class="choice"><input type="radio" name="exp" value="Já atuei em casos pontuais"><span>Já atuei em casos pontuais</span></label>
+              <label class="choice"><input type="radio" name="exp" value="Só o que vi na faculdade ou em cursos"><span>Só o que vi na faculdade ou em cursos</span></label>
+              <label class="choice"><input type="radio" name="exp" value="Praticamente nenhuma"><span>Praticamente nenhuma</span></label>
+            </div>
+          </fieldset>
+
+          <fieldset class="q" data-q="reforma">
+            <legend>Quanto você já conhece da Reforma Tributária?</legend>
+            <div class="choices">
+              <label class="choice"><input type="radio" name="reforma" value="Domino o IBS e a CBS e acompanho a regulamentação"><span>Domino o IBS e a CBS e acompanho a regulamentação</span></label>
+              <label class="choice"><input type="radio" name="reforma" value="Conheço a lógica geral"><span>Conheço a lógica geral</span></label>
+              <label class="choice"><input type="radio" name="reforma" value="Ainda estou começando a entender"><span>Ainda estou começando a entender</span></label>
+            </div>
+          </fieldset>
+        </section>
+
+        <!-- 3. Escritório -->
+        <section class="block panel">
+          <div class="block-head">
+            <span class="block-num">03 · Seu escritório</span>
+          </div>
+
+          <fieldset class="q" data-q="dono">
+            <legend>Você é proprietário(a) ou sócio(a) de um escritório de advocacia?</legend>
+            <div class="choices">
+              <label class="choice"><input type="radio" name="dono" value="Sim, sou titular ou sócio(a) de um escritório"><span>Sim, sou titular ou sócio(a) de um escritório</span></label>
+              <label class="choice"><input type="radio" name="dono" value="Não, sou advogado(a) associado(a) ou empregado(a)"><span>Não, sou advogado(a) associado(a) ou empregado(a)</span></label>
+              <label class="choice"><input type="radio" name="dono" value="Não, atuo de forma autônoma, sem escritório estruturado"><span>Não, atuo de forma autônoma, sem escritório estruturado</span></label>
+              <label class="choice"><input type="radio" name="dono" value="Não, atuo em departamento jurídico de empresa"><span>Não, atuo em departamento jurídico de empresa</span></label>
+            </div>
+          </fieldset>
+
+          <div class="sub" id="sub-escritorio" hidden>
+            <div class="fields">
+              <div class="field wide">
+                <label for="escritorio">Nome do escritório <span class="opt-tag">(opcional)</span></label>
+                <input id="escritorio" type="text" autocomplete="organization" placeholder="Ex.: Silva & Souza Advogados">
+              </div>
+            </div>
+            <fieldset class="q" data-q="equipe" style="margin-top:16px">
+              <legend>Quantas pessoas trabalham no escritório?</legend>
+              <div class="choices">
+                <label class="choice"><input type="radio" name="equipe" value="Só eu"><span>Só eu</span></label>
+                <label class="choice"><input type="radio" name="equipe" value="De 2 a 5"><span>De 2 a 5</span></label>
+                <label class="choice"><input type="radio" name="equipe" value="De 6 a 15"><span>De 6 a 15</span></label>
+                <label class="choice"><input type="radio" name="equipe" value="Mais de 15"><span>Mais de 15</span></label>
+              </div>
+            </fieldset>
+          </div>
+
+          <div class="field">
+            <label for="expectativa">O que você espera aprender na aula? <span class="opt-tag">(opcional)</span></label>
+            <textarea id="expectativa" maxlength="1000" placeholder="Conte em poucas palavras"></textarea>
+          </div>
+        </section>
+
+        <div class="hp" aria-hidden="true"><input id="hp" type="text" tabindex="-1" autocomplete="off"></div>
+
+        <label class="consent" for="consent">
+          <input id="consent" type="checkbox" required>
+          <span>Autorizo o Ventura Advogados a usar os dados informados para enviar o link da aula e entrar em contato sobre conteúdos de Reforma Tributária. Posso pedir a exclusão dos meus dados a qualquer momento.</span>
+        </label>
+
+        <p class="form-error" id="form-error" role="alert" hidden></p>
+        <div class="submit-row">
+          <button class="btn btn-primary" id="submit" type="submit">Confirmar inscrição</button>
+          <span class="meta">O link chega no seu e-mail</span>
+        </div>
+      </form>
+    </div>
+
+    <!-- Confirmação -->
+    <section class="done" id="view-done" hidden>
+      <div class="done-card panel">
+        <div class="check" aria-hidden="true">✓</div>
+        <div class="eyebrow">Inscrição confirmada</div>
+        <h2 id="done-title">Sua vaga está garantida.</h2>
+        <p class="lead">Você receberá o <strong>link de acesso à aula</strong> no e-mail que informou:</p>
+        <div class="mail-box" id="done-email"></div>
+        <ul>
+          <li>Se não encontrar a mensagem, confira as pastas de spam e promoções.</li>
+          <li>Guarde o e-mail: é por ele que você vai acessar a aula.</li>
+        </ul>
+      </div>
+      <button class="btn btn-ghost" id="again" type="button">Fazer outra inscrição</button>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div class="wrap">
+      <span>Aula do evento Escala 5.0 · <a href="https://venturalaw.com.br/" target="_blank" rel="noopener">Ventura Advogados</a></span>
+      <span>Os dados informados são usados apenas para a inscrição e o envio do link da aula, conforme a LGPD.</span>
+    </div>
+  </footer>
+</div>
+
+<script>
+(function () {
+  "use strict";
+
+  // App da Web do Google Apps Script (apps-script-inscricao-aula.gs): grava na planilha, avisa a equipe e confirma ao inscrito.
+  var SCRIPT_URL = "";
+
+  var $ = function (id) { return document.getElementById(id); };
+
+  // ---------- Onda dourada do fundo ----------
+  (function drawWave() {
+    var svg = $("wave");
+    var defs = '<defs><linearGradient id="g" x1="0" x2="1" y1="0" y2="0">' +
+      '<stop offset="0" stop-color="#D8921C" stop-opacity=".15"/><stop offset=".3" stop-color="#FFD98A"/>' +
+      '<stop offset=".55" stop-color="#F5B942" stop-opacity=".7"/><stop offset=".8" stop-color="#FFE3A3"/>' +
+      '<stop offset="1" stop-color="#D8921C" stop-opacity=".3"/></linearGradient>' +
+      '<filter id="glow" x="-10%" y="-50%" width="120%" height="200%"><feGaussianBlur stdDeviation="6"/></filter></defs>';
+    var lines = "", glow = "";
+    for (var i = 0; i < 22; i++) {
+      var t = i / 21, amp = 70 + 50 * Math.sin(t * Math.PI), phase = (t - 0.5) * 0.9, d = "";
+      for (var x = 0; x <= 1600; x += 40) {
+        var u = x / 1600;
+        var y = 300 + (t - 0.5) * 60 * Math.sin(u * Math.PI * 2 + 1) - amp * Math.sin(u * Math.PI * 2.1 + 2.6 + phase) - 40 * u;
+        d += (x ? " L" : "M") + x + " " + y.toFixed(1);
+      }
+      var op = (0.18 + 0.6 * Math.sin(t * Math.PI)).toFixed(2);
+      lines += '<path d="' + d + '" fill="none" stroke="url(#g)" stroke-width="' + (i === 11 ? 2.4 : 0.9) + '" opacity="' + op + '"/>';
+      if (i === 11) glow = '<path d="' + d + '" fill="none" stroke="url(#g)" stroke-width="10" opacity=".55" filter="url(#glow)"/>';
+    }
+    svg.innerHTML = defs + glow + lines;
+  })();
+
+  function esc(s) {
+    return String(s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; });
+  }
+  function formatPhone(v) {
+    var d = v.replace(/\D/g, "").replace(/^55(?=\d{10,11}$)/, "").slice(0, 11);
+    if (d.length <= 2) return d.length ? "(" + d : "";
+    if (d.length <= 6) return "(" + d.slice(0, 2) + ") " + d.slice(2);
+    if (d.length <= 10) return "(" + d.slice(0, 2) + ") " + d.slice(2, 6) + "-" + d.slice(6);
+    return "(" + d.slice(0, 2) + ") " + d.slice(2, 7) + "-" + d.slice(7);
+  }
+  function radio(name) {
+    var el = document.querySelector('input[name="' + name + '"]:checked');
+    return el ? el.value : "";
+  }
+  function legendOf(name) {
+    return document.querySelector('fieldset[data-q="' + name + '"] legend').textContent.trim();
+  }
+
+  $("whatsapp").addEventListener("input", function (e) { e.target.value = formatPhone(e.target.value); });
+
+  // Escritório: detalhes só para quem é titular ou sócio(a)
+  function isOwner() { return radio("dono").indexOf("Sim") === 0; }
+  document.querySelectorAll('input[name="dono"]').forEach(function (r) {
+    r.addEventListener("change", function () { $("sub-escritorio").hidden = !isOwner(); });
+  });
+  document.addEventListener("change", function (e) {
+    var fs = e.target.closest && e.target.closest("fieldset.q");
+    if (fs) fs.classList.remove("invalid");
+  });
+
+  var REQUIRED_Q = ["tempo", "area", "exp", "reforma", "dono"];
+
+  $("form").addEventListener("submit", function (e) {
+    e.preventDefault();
+    var nomeEl = $("nome"), emailEl = $("email"), email2El = $("email2"), telEl = $("whatsapp");
+    var nome = nomeEl.value.trim().replace(/\s+/g, " ");
+    var email = emailEl.value.trim().toLowerCase();
+    var email2 = email2El.value.trim().toLowerCase();
+    var tel = formatPhone(telEl.value);
+
+    var nomeOk = nome.length >= 3 && nome.indexOf(" ") > 0;
+    var emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email);
+    var email2Ok = emailOk && email === email2;
+    var telOk = /^\(\d{2}\) \d{4,5}-\d{4}$/.test(tel);
+    nomeEl.setAttribute("aria-invalid", String(!nomeOk));
+    emailEl.setAttribute("aria-invalid", String(!emailOk));
+    email2El.setAttribute("aria-invalid", String(!email2Ok));
+    telEl.setAttribute("aria-invalid", String(!telOk));
+
+    var required = REQUIRED_Q.concat(isOwner() ? ["equipe"] : []);
+    var missing = required.filter(function (q) { return !radio(q); });
+    document.querySelectorAll("fieldset.q").forEach(function (fs) {
+      fs.classList.toggle("invalid", missing.indexOf(fs.dataset.q) !== -1);
+    });
+
+    var msg = !nomeOk ? "Informe o seu nome completo." :
+      !emailOk ? "Confira o e-mail: ele precisa estar no formato nome@dominio.com.br." :
+      !email2Ok ? "Os dois e-mails não conferem. É por esse e-mail que você vai receber o link da aula." :
+      !telOk ? "Informe o seu celular com DDD, por exemplo (11) 91234-5678." :
+      missing.length ? "Responda a pergunta destacada: “" + legendOf(missing[0]) + "”" :
+      !$("consent").checked ? "Marque a autorização de uso dos dados para concluir a inscrição." : "";
+    showError(msg);
+    if (msg) {
+      var target = !nomeOk ? nomeEl : !emailOk ? emailEl : !email2Ok ? email2El : !telOk ? telEl :
+        missing.length ? document.querySelector('fieldset[data-q="' + missing[0] + '"]') : $("consent");
+      target.scrollIntoView({ behavior: "smooth", block: "center" });
+      if (target.focus && target.tagName === "INPUT") target.focus({ preventScroll: true });
+      return;
+    }
+    telEl.value = tel;
+
+    var owner = isOwner();
+    var campos = [
+      ["Data e hora", new Date().toLocaleString("pt-BR", { timeZone: "America/Sao_Paulo" })],
+      ["Nome", nome],
+      ["E-mail", email],
+      ["WhatsApp", tel],
+      ["Cidade / UF", $("cidade").value.trim()],
+      ["Tempo de advocacia", radio("tempo")],
+      ["Área de atuação", radio("area")],
+      ["Experiência em Direito Tributário", radio("exp")],
+      ["Conhecimento da Reforma Tributária", radio("reforma")],
+      ["Proprietário(a) de escritório?", radio("dono")],
+      ["Nome do escritório", owner ? $("escritorio").value.trim() : ""],
+      ["Pessoas no escritório", owner ? radio("equipe") : ""],
+      ["O que espera da aula", $("expectativa").value.trim()]
+    ];
+
+    var btn = $("submit");
+    btn.disabled = true; btn.textContent = "Enviando…";
+    send(nome, email, campos).then(function () {
+      $("done-title").textContent = nome.split(" ")[0] + ", sua vaga está garantida.";
+      $("done-email").textContent = email;
+      $("view-form").hidden = true;
+      $("view-done").hidden = false;
+      $("view-done").classList.add("fade");
+      window.scrollTo(0, 0);
+    }).catch(function (err) {
+      showError("Não conseguimos registrar a sua inscrição agora. Verifique a sua conexão e tente novamente.", (err && err.message) || "");
+    }).then(function () {
+      btn.disabled = false; btn.textContent = "Confirmar inscrição";
+    });
+  });
+
+  function showError(msg, detail) {
+    var el = $("form-error");
+    el.innerHTML = esc(msg) + (detail ? '<small class="err-detail">Detalhe técnico: ' + esc(detail) + "</small>" : "");
+    el.hidden = !msg;
+  }
+
+  // Envio como formulário simples (sem cabeçalhos extras), que o navegador manda sem checagem prévia (CORS).
+  function send(nome, email, campos) {
+    if ($("hp").value) return Promise.resolve(); // campo-isca preenchido: robô
+    if (!SCRIPT_URL) return Promise.reject(new Error("endereço de envio não configurado"));
+    var body = new URLSearchParams();
+    body.append("nome", nome);
+    body.append("email", email);
+    body.append("campos", JSON.stringify(campos));
+    return fetch(SCRIPT_URL, { method: "POST", body: body })
+      .then(function (r) { return r.json(); })
+      .then(function (res) { if (!res.ok) throw new Error(res.erro || "falha no envio"); });
+  }
+
+  $("again").addEventListener("click", function () {
+    $("form").reset();
+    $("sub-escritorio").hidden = true;
+    $("view-done").hidden = true;
+    $("view-form").hidden = false;
+    window.scrollTo(0, 0);
+  });
+})();
+</script>
+</body>
+</html>
