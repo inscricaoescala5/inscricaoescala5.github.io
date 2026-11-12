@@ -108,7 +108,12 @@ h3 { font-size: 20px; line-height: 1.25; font-weight: 700; letter-spacing: -0.02
 
 /* Realização */
 .org { padding: 22px 24px; display: grid; gap: 16px; margin-bottom: 22px; }
-.org .host { padding: 18px 0 0; max-width: none; border-top: 1px solid var(--line); }
+.org .host { grid-template-columns: 112px minmax(0, 1fr); gap: 22px; padding: 0 0 20px; margin-bottom: 4px; max-width: none; border-bottom: 1px solid var(--line); }
+.org .host img { width: 112px; height: 112px; border: 2px solid var(--gold); box-shadow: 0 0 24px rgba(245, 185, 66, 0.3); }
+.org .host > div { display: grid; gap: 4px; }
+.org .host strong { font-size: clamp(22px, 3.4vw, 28px); line-height: 1.15; letter-spacing: -0.02em; font-weight: 700; }
+.org .host p { font-size: 15px; }
+.host-tag { font-family: var(--display); font-size: 11px; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); }
 .org-head { font-family: var(--display); font-size: 11px; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); }
 .org-logos { display: flex; align-items: center; gap: 28px; flex-wrap: wrap; }
 .org-logos a { display: block; }
@@ -239,6 +244,8 @@ h3 { font-size: 20px; line-height: 1.25; font-weight: 700; letter-spacing: -0.02
   .brands { gap: 10px; }
   .brand-sep { height: 24px; }
   .org { padding: 20px 16px; }
+  .org .host { grid-template-columns: 84px minmax(0, 1fr); gap: 16px; }
+  .org .host img { width: 84px; height: 84px; }
   .org-logos { gap: 18px; }
   .org-logos .lv { height: 38px; }
   .org-logos .lt { height: 58px; }
@@ -283,6 +290,14 @@ h3 { font-size: 20px; line-height: 1.25; font-weight: 700; letter-spacing: -0.02
       </section>
 
       <section class="org panel" aria-label="Realização">
+        <div class="host">
+          <img src="assets/leonardo.jpg" alt="Leonardo Ventura" width="112" height="112">
+          <div>
+            <span class="host-tag">Com</span>
+            <strong>Leonardo Ventura</strong>
+            <p>Sócio-fundador do Ventura Advogados e da mentoria TaxNowBR, com 30 anos de experiência nas áreas tributária e empresarial.</p>
+          </div>
+        </div>
         <div class="org-head">Realização</div>
         <div class="org-logos">
           <a href="https://venturalaw.com.br/" target="_blank" rel="noopener"><img class="lv" src="assets/logo-ventura.png" alt="Ventura Advogados"></a>
@@ -290,10 +305,6 @@ h3 { font-size: 20px; line-height: 1.25; font-weight: 700; letter-spacing: -0.02
           <a href="https://taxnowbr.com/" target="_blank" rel="noopener"><img class="lt" src="assets/logo-taxnow.png" alt="TaxNowBR"></a>
         </div>
         <p>Uma aula do <strong>Ventura Advogados</strong>, com equipe especializada em Direito Tributário, e do <strong>TaxNowBR</strong>, a mentoria para advogados que querem transformar a Reforma Tributária em negócio.</p>
-        <div class="host">
-          <img src="assets/leonardo.jpg" alt="Leonardo Ventura" width="76" height="76">
-          <p><strong>Leonardo Ventura</strong>Sócio-fundador do Ventura Advogados e da mentoria TaxNowBR, com 30 anos de experiência nas áreas tributária e empresarial.</p>
-        </div>
       </section>
 
       <form class="form" id="form" novalidate>
