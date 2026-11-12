@@ -63,7 +63,11 @@ button, input, textarea { font: inherit; color: inherit; }
 /* Header */
 .top { border-bottom: 1px solid var(--line); background: rgba(1, 8, 24, 0.55); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); }
 .top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-block: 14px; }
+.brands { display: flex; align-items: center; gap: 14px; min-width: 0; }
+.brand { display: block; flex-shrink: 0; }
 .brand img { height: 30px; width: auto; display: block; }
+.brand-taxnow img { height: 40px; }
+.brand-sep { width: 1px; height: 30px; background: var(--line); }
 .top-tag { font-family: var(--display); font-size: 11px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text); text-align: right; }
 .top-tag b { color: var(--gold); font-weight: 700; }
 
@@ -101,6 +105,17 @@ h3 { font-size: 20px; line-height: 1.25; font-weight: 700; letter-spacing: -0.02
   border: 1px solid var(--line); padding: 7px 13px; color: var(--text); background: rgba(1, 8, 24, 0.5);
 }
 .chip::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--gold); box-shadow: 0 0 8px var(--gold); }
+
+/* Realização */
+.org { padding: 22px 24px; display: grid; gap: 16px; margin-bottom: 14px; }
+.org-head { font-family: var(--display); font-size: 11px; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); }
+.org-logos { display: flex; align-items: center; gap: 28px; flex-wrap: wrap; }
+.org-logos a { display: block; }
+.org-logos .lv { height: 52px; width: auto; display: block; }
+.org-logos .lt { height: 78px; width: auto; display: block; }
+.org-logos .sep { width: 1px; height: 56px; background: var(--line); }
+.org p { margin: 0; color: var(--text); font-size: 15px; max-width: 62ch; }
+.org p strong { color: var(--white); font-weight: 500; }
 
 /* Quem conduz */
 .host { display: grid; grid-template-columns: 76px minmax(0, 1fr); gap: 16px; align-items: center; padding: 16px 18px; max-width: 620px; }
@@ -218,7 +233,15 @@ h3 { font-size: 20px; line-height: 1.25; font-weight: 700; letter-spacing: -0.02
   .block { padding: 20px 16px; }
   .lead { font-size: 16.5px; }
   .top-tag { font-size: 10px; letter-spacing: 0.12em; max-width: 160px; line-height: 1.4; }
-  .brand img { height: 26px; }
+  .brand img { height: 24px; }
+  .brand-taxnow img { height: 32px; }
+  .brands { gap: 10px; }
+  .brand-sep { height: 24px; }
+  .org { padding: 20px 16px; }
+  .org-logos { gap: 18px; }
+  .org-logos .lv { height: 38px; }
+  .org-logos .lt { height: 58px; }
+  .org-logos .sep { height: 44px; }
   .btn { width: 100%; }
   .wave { height: 34vh; opacity: .55; }
 }
@@ -232,7 +255,11 @@ h3 { font-size: 20px; line-height: 1.25; font-weight: 700; letter-spacing: -0.02
 <div class="page">
   <header class="top">
     <div class="wrap">
-      <a class="brand" href="https://venturalaw.com.br/" target="_blank" rel="noopener"><img src="assets/logo-ventura.png" alt="Ventura Advogados"></a>
+      <div class="brands">
+        <a class="brand" href="https://venturalaw.com.br/" target="_blank" rel="noopener"><img src="assets/logo-ventura.png" alt="Ventura Advogados"></a>
+        <span class="brand-sep" aria-hidden="true"></span>
+        <a class="brand brand-taxnow" href="https://taxnowbr.com/" target="_blank" rel="noopener"><img src="assets/logo-taxnow.png" alt="TaxNowBR"></a>
+      </div>
       <div class="top-tag"><b>Escala 5.0</b> · Inscrição para a aula</div>
     </div>
   </header>
@@ -252,6 +279,16 @@ h3 { font-size: 20px; line-height: 1.25; font-weight: 700; letter-spacing: -0.02
           </div>
         </div>
         <div class="hero-logo-wrap"><img class="hero-logo" src="assets/escala-cartaz.jpg" alt="Escala 5.0" width="720" height="720"></div>
+      </section>
+
+      <section class="org panel" aria-label="Realização">
+        <div class="org-head">Realização</div>
+        <div class="org-logos">
+          <a href="https://venturalaw.com.br/" target="_blank" rel="noopener"><img class="lv" src="assets/logo-ventura.png" alt="Ventura Advogados"></a>
+          <span class="sep" aria-hidden="true"></span>
+          <a href="https://taxnowbr.com/" target="_blank" rel="noopener"><img class="lt" src="assets/logo-taxnow.png" alt="TaxNowBR"></a>
+        </div>
+        <p>Uma aula do <strong>Ventura Advogados</strong>, com equipe especializada em Direito Tributário, e do <strong>TaxNowBR</strong>, a mentoria para advogados que querem transformar a Reforma Tributária em negócio.</p>
       </section>
 
       <div class="host panel" style="margin-bottom:22px">
@@ -382,7 +419,7 @@ h3 { font-size: 20px; line-height: 1.25; font-weight: 700; letter-spacing: -0.02
 
         <label class="consent" for="consent">
           <input id="consent" type="checkbox" required>
-          <span>Autorizo o Ventura Advogados a usar os dados informados para enviar o link da aula e entrar em contato sobre conteúdos de Reforma Tributária. Posso pedir a exclusão dos meus dados a qualquer momento.</span>
+          <span>Autorizo o Ventura Advogados e o TaxNowBR a usar os dados informados para enviar o link da aula e entrar em contato sobre conteúdos de Reforma Tributária. Posso pedir a exclusão dos meus dados a qualquer momento.</span>
         </label>
 
         <p class="form-error" id="form-error" role="alert" hidden></p>
@@ -412,7 +449,7 @@ h3 { font-size: 20px; line-height: 1.25; font-weight: 700; letter-spacing: -0.02
 
   <footer class="foot">
     <div class="wrap">
-      <span>Aula do evento Escala 5.0 · <a href="https://venturalaw.com.br/" target="_blank" rel="noopener">Ventura Advogados</a></span>
+      <span>Aula do evento Escala 5.0 · Realização: <a href="https://venturalaw.com.br/" target="_blank" rel="noopener">Ventura Advogados</a> e <a href="https://taxnowbr.com/" target="_blank" rel="noopener">TaxNowBR</a></span>
       <span>Os dados informados são usados apenas para a inscrição e o envio do link da aula, conforme a LGPD.</span>
     </div>
   </footer>
