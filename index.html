@@ -244,8 +244,12 @@ h3 { font-size: 20px; line-height: 1.25; font-weight: 700; letter-spacing: -0.02
   .brands { gap: 10px; }
   .brand-sep { height: 24px; }
   .org { padding: 20px 16px; }
-  .org .host { grid-template-columns: 84px minmax(0, 1fr); gap: 16px; }
-  .org .host img { width: 84px; height: 84px; }
+  .org .host { grid-template-columns: 84px minmax(0, 1fr); column-gap: 16px; row-gap: 2px; }
+  .org .host > div { display: contents; }
+  .org .host img { width: 84px; height: 84px; grid-row: 1 / 3; grid-column: 1; }
+  .org .host .host-tag { grid-column: 2; grid-row: 1; align-self: end; }
+  .org .host strong { grid-column: 2; grid-row: 2; align-self: start; }
+  .org .host p { grid-column: 1 / -1; grid-row: 3; margin-top: 12px; }
   .org-logos { gap: 18px; }
   .org-logos .lv { height: 38px; }
   .org-logos .lt { height: 58px; }
@@ -295,16 +299,14 @@ h3 { font-size: 20px; line-height: 1.25; font-weight: 700; letter-spacing: -0.02
           <div>
             <span class="host-tag">Com</span>
             <strong>Leonardo Ventura</strong>
-            <p>Sócio-fundador do Ventura Advogados e da mentoria TaxNowBR, com 30 anos de experiência nas áreas tributária e empresarial.</p>
+            <p>Aula ministrada pelo sócio-fundador do Ventura Advogados, escritório reconhecido por sua atuação técnica, estratégica e personalizada, especialmente na área do Direito Tributário, e da TaxNow, mentoria voltada à capacitação de advogados que desejam transformar as oportunidades trazidas pela Reforma Tributária em negócios.</p>
           </div>
         </div>
-        <div class="org-head">Realização</div>
         <div class="org-logos">
           <a href="https://venturalaw.com.br/" target="_blank" rel="noopener"><img class="lv" src="assets/logo-ventura.png" alt="Ventura Advogados"></a>
           <span class="sep" aria-hidden="true"></span>
           <a href="https://taxnowbr.com/" target="_blank" rel="noopener"><img class="lt" src="assets/logo-taxnow.png" alt="TaxNowBR"></a>
         </div>
-        <p>Uma aula do <strong>Ventura Advogados</strong>, com equipe especializada em Direito Tributário, e do <strong>TaxNowBR</strong>, a mentoria para advogados que querem transformar a Reforma Tributária em negócio.</p>
       </section>
 
       <form class="form" id="form" novalidate>
