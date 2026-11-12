@@ -107,7 +107,8 @@ h3 { font-size: 20px; line-height: 1.25; font-weight: 700; letter-spacing: -0.02
 .chip::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--gold); box-shadow: 0 0 8px var(--gold); }
 
 /* Realização */
-.org { padding: 22px 24px; display: grid; gap: 16px; margin-bottom: 14px; }
+.org { padding: 22px 24px; display: grid; gap: 16px; margin-bottom: 22px; }
+.org .host { padding: 18px 0 0; max-width: none; border-top: 1px solid var(--line); }
 .org-head { font-family: var(--display); font-size: 11px; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); }
 .org-logos { display: flex; align-items: center; gap: 28px; flex-wrap: wrap; }
 .org-logos a { display: block; }
@@ -289,12 +290,11 @@ h3 { font-size: 20px; line-height: 1.25; font-weight: 700; letter-spacing: -0.02
           <a href="https://taxnowbr.com/" target="_blank" rel="noopener"><img class="lt" src="assets/logo-taxnow.png" alt="TaxNowBR"></a>
         </div>
         <p>Uma aula do <strong>Ventura Advogados</strong>, com equipe especializada em Direito Tributário, e do <strong>TaxNowBR</strong>, a mentoria para advogados que querem transformar a Reforma Tributária em negócio.</p>
+        <div class="host">
+          <img src="assets/leonardo.jpg" alt="Leonardo Ventura" width="76" height="76">
+          <p><strong>Leonardo Ventura</strong>Sócio-fundador do Ventura Advogados e da mentoria TaxNowBR, com 30 anos de experiência nas áreas tributária e empresarial.</p>
+        </div>
       </section>
-
-      <div class="host panel" style="margin-bottom:22px">
-        <img src="assets/leonardo.jpg" alt="Leonardo Ventura" width="76" height="76">
-        <p><strong>Leonardo Ventura</strong>Sócio-fundador do Ventura Advogados e da mentoria TaxNowBR, com 30 anos de experiência nas áreas tributária e empresarial.</p>
-      </div>
 
       <form class="form" id="form" novalidate>
         <!-- 1. Dados -->
